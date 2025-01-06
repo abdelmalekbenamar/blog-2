@@ -4,9 +4,10 @@
 <nav class="nav w-[250px] h-screen bg-[bisque]">
     <div class="fermer text-right cursor-pointer p-2.5 border-b-[black] border-b border-solid">X</div>
     <ul>
-        <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="#">Accueille</a></li>
+        <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="./index.php">Accueille</a></li>
         <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="#">Paramètres</a></li>
         <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="#">Ajouter Article</a></li>
+        <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="./connexion.php">Connexion</a></li>
         <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="#">Déconnexion</a></li>
     </ul>
 
@@ -20,9 +21,10 @@
 <img class="MPLogo h-20" src="./assets/images/logo.png" alt="">
 <nav class="navMP hidden md:block">
     <ul class="listMenuPrincipal flex justify-between">
-        <li class="MPLi mx-5 my-0"><a href="#">Accueille</a></li>
+        <li class="MPLi mx-5 my-0"><a href="./index.php">Accueille</a></li>
         <li class="MPLi mx-5 my-0"><a href="#">Paramètres</a></li>
         <li class="MPLi mx-5 my-0"><a href="#">Ajouter Article</a></li>
+        <li class="MPLi mx-5 my-0"><a href="./connexion.php">Connexion</a></li>
         <li class="MPLi mx-5 my-0"><a href="#">Déconnexion</a></li>
     </ul>
 </nav>

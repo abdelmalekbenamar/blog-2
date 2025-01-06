@@ -11,45 +11,45 @@
 
     <?php include_once("./php/menu.php") ?>
 
-    <main>
-        <div class="articleCard">
+    <main class="flex flex-wrap gap-7 justify-center p-[30px]">
+        <div class="articleCard w-[400px]">
             <div class="containerArticleImage">
-                <img class="articleImage" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
+                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
             </div>
-            <h2 class="articleTitle"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
+            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
+            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
         </div>
 
-        <div class="articleCard">
+        <div class="articleCard w-[400px]">
             <div class="containerArticleImage">
-                <img class="articleImage" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
+                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
             </div>
-            <h2 class="articleTitle"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
+            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
+            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
         </div>
 
-        <div class="articleCard">
+        <div class="articleCard w-[400px]">
             <div class="containerArticleImage">
-                <img class="articleImage" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
+                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
             </div>
-            <h2 class="articleTitle"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
+            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
+            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
         </div>
 
-        <div class="articleCard">
+        <div class="articleCard w-[400px]">
             <div class="containerArticleImage">
-                <img class="articleImage" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
+                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
             </div>
-            <h2 class="articleTitle"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
+            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
+            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
         </div>
 
-        <div class="articleCard">
+        <div class="articleCard w-[400px]">
             <div class="containerArticleImage">
-                <img class="articleImage" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
+                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
             </div>
-            <h2 class="articleTitle"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
+            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
+            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
         </div>
     </main>
     
