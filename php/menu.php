@@ -5,11 +5,14 @@
     <div class="fermer text-right cursor-pointer p-2.5 border-b-[black] border-b border-solid">X</div>
     <ul>
         <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="./index.php">Accueille</a></li>
+        <?php if(isset($_SESSION["username"])){ ?>
         <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="./parametres.php">Paramètres</a></li>
         <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="./ajouterArticle.php">Ajouter Article</a></li>
+        <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="./php/deconnexion.php">Déconnexion</a></li>
+        <?php }else { ?>
         <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="./connexion.php">Connexion</a></li>
         <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="#">S'inscrire</a></li>
-        <li class="li text-center p-2.5 border-b-[black] border-b border-solid"><a href="#">Déconnexion</a></li>
+        <?php } ?>
     </ul>
 
 </nav>
@@ -23,23 +26,28 @@
 <nav class="navMP hidden md:block text-sm">
     <ul class="listMenuPrincipal flex justify-between">
         <li class="MPLi mx-5 my-0"><a href="./index.php">Accueille</a></li>
+        <?php if(isset($_SESSION["username"])){ ?>
         <li class="MPLi mx-5 my-0"><a href="./parametres.php">Paramètres</a></li>
         <li class="MPLi mx-5 my-0"><a href="./ajouterArticle.php">Ajouter Article</a></li>
+        <li class="MPLi mx-5 my-0"><a href="./php/deconnexion.php">Déconnexion</a></li>
+        <?php }else{ ?>
         <li class="MPLi mx-5 my-0"><a href="./connexion.php">Connexion</a></li>
-        <li class="MPLi mx-5 my-0"><a href="#">S'inscrire</a></li>
-        <li class="MPLi mx-5 my-0"><a href="#">Déconnexion</a></li>
+        <li class="MPLi mx-5 my-0"><a href="./inscription.php">S'inscrire</a></li>
+        <?php } ?>
     </ul>
 </nav>
 <div>
     <div class="menuInfoSearch flex justify-between items-center w-[110px]">
-        <div class="user">username</div>
+        <?php if(isset($_SESSION["username"])){ ?>
+        <div class="user"><?php echo $_SESSION["username"]; ?></div>
+        <?php } ?>
         <img class="MPSearch h-[30px] cursor-pointer" src="./assets/images/search.png" alt="">
     </div>
 </div>
 
 </div>
 
-<form class="chercherArticleForm w-screen absolute bg-[burlywood] top-[-105px] duration-[0.3s] transition-[top] ease-[ease-in]" action="" method="POST">
+<form class="chercherArticleForm w-screen absolute bg-[burlywood] top-[-105px] duration-[0.3s] transition-[top] ease-[ease-in]" action="./index.php" method="GET">
 <input name="articleARecherhcer" class="inputChercherArticle w-full h-[50px] bg-[burlywood] rounded-[10px] border-b-[bisque] border-b border-solid" type="text" placeholder="Rechercher...">
 <div class="rechercherFormButtons w-fit mx-auto my-0">
     <button class="submitSearchButton border m-2.5 p-[5px] rounded-[5px] border-solid border-[black]" type="submit">Chercher</button>

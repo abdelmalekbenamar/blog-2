@@ -1,3 +1,14 @@
+<?php 
+session_start();
+include_once("./classes/articleClass.php");
+
+$articles = new Article();
+$allArticles = $articles->allArticles();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,47 +21,36 @@
 <body class="bg-[burlywood]">
 
     <?php include_once("./php/menu.php") ?>
-
     <main class="flex flex-wrap gap-7 justify-center p-[30px]">
-        <div class="articleCard w-[400px]">
-            <div class="containerArticleImage">
-                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
-            </div>
-            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
-        </div>
 
-        <div class="articleCard w-[400px]">
-            <div class="containerArticleImage">
-                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
+        <?php
+        if(!isset($_GET["articleARecherhcer"])){
+         foreach($allArticles as $article){ ?>
+        <div class="articleCard w-[300px]">
+            <div class="containerArticleImage w-[300px] h-[167px] overflow-hidden flex justify-center items-center">
+                <img class="articleImage w-[400px]" src="<?php echo $article["image"]; ?>" alt="">
             </div>
-            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
+            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href=""><?php echo $article["title"] ?></a></h2>
+            <p class="articleText text-sm"><?php echo $article["article"]; ?></p>
         </div>
+        <?php }}else{ 
+            $searchResult = $articles->searchForm($_GET["articleARecherhcer"]);
+            foreach($searchResult as $result){
+            ?>
+            <div class="articleCard w-[300px]">
+                <div class="containerArticleImage w-[300px] h-[167px] overflow-hidden flex justify-center items-center">
+                    <img class="articleImage w-[400px]" src="<?php echo $result["image"]; ?>" alt="">
+                </div>
+                <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href=""><?php echo $result["title"] ?></a></h2>
+                <p class="articleText text-sm"><?php echo $result["article"]; ?></p>
+            </div>
 
-        <div class="articleCard w-[400px]">
-            <div class="containerArticleImage">
-                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
-            </div>
-            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
-        </div>
 
-        <div class="articleCard w-[400px]">
-            <div class="containerArticleImage">
-                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
-            </div>
-            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
-        </div>
+        <?php }}  ?>
 
-        <div class="articleCard w-[400px]">
-            <div class="containerArticleImage">
-                <img class="articleImage w-[400px]" src="https://flourist.com/cdn/shop/articles/IMG_7623_VSCO.jpg" alt="">
-            </div>
-            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="">Le titre de l'article</a></h2>
-            <p class="articleText text-sm">This simple salad can be dressed up or down depending on what you have in your fridge. We like it as is, with or without...</p>
-        </div>
+       
+
+       
     </main>
     
 

@@ -19,9 +19,13 @@
         <div class="partieDroite w-[calc(100vw_-_80px)] mt-[55px] p-[10px] overflow-y-auto h-[70vh]">
 
             <div class="md:flex md:justify-between">
-                <!-- <button class="bg-[blue] text-[white] p-[5px] rounded-[5px] m-[5px]">Ajouter</button> -->
                 <form action="">
                     <input class="text-[black] p-[5px] rounded-[5px] m-[5px]" type="text">
+                    <select name="categorie" id="">
+                        <option value="">cat 1</option>
+                        <option value="">Cat2</option>
+                        <option value="">Cat3</option>
+                    </select>
                     <button class="bg-[orangered] text-[white] p-[5px] rounded-[5px] m-[5px]" type="submit">Chercher</button>
                 </form>
             </div>
@@ -43,77 +47,7 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="border p-2.5 border-solid border-[black]">Mon titre 1</td>
-                    <td class="border p-2.5 border-solid border-[black]">Mon article</td>
-                    <td class="border p-2.5 border-solid border-[black]">
-                        <button class="editerArticle bg-[green] text-[white] p-[5px] rounded-[5px] m-[5px]">Editer</button>
-                        <button class="supprimerArticle bg-[red] text-[white] p-[5px] rounded-[5px]">Supprimer</button>
-                    </td>
-                </tr>
 
-                <tr>
-                    <td class="border p-2.5 border-solid border-[black]">Mon titre 1</td>
-                    <td class="border p-2.5 border-solid border-[black]">Mon article</td>
-                    <td class="border p-2.5 border-solid border-[black]">
-                        <button class="editerArticle bg-[green] text-[white] p-[5px] rounded-[5px] m-[5px]">Editer</button>
-                        <button class="supprimerArticle bg-[red] text-[white] p-[5px] rounded-[5px]">Supprimer</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="border p-2.5 border-solid border-[black]">Mon titre 1</td>
-                    <td class="border p-2.5 border-solid border-[black]">Mon article</td>
-                    <td class="border p-2.5 border-solid border-[black]">
-                        <button class="editerArticle bg-[green] text-[white] p-[5px] rounded-[5px] m-[5px]">Editer</button>
-                        <button class="supprimerArticle bg-[red] text-[white] p-[5px] rounded-[5px]">Supprimer</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="border p-2.5 border-solid border-[black]">Mon titre 1</td>
-                    <td class="border p-2.5 border-solid border-[black]">Mon article</td>
-                    <td class="border p-2.5 border-solid border-[black]">
-                        <button class="editerArticle bg-[green] text-[white] p-[5px] rounded-[5px] m-[5px]">Editer</button>
-                        <button class="supprimerArticle bg-[red] text-[white] p-[5px] rounded-[5px]">Supprimer</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="border p-2.5 border-solid border-[black]">Mon titre 1</td>
-                    <td class="border p-2.5 border-solid border-[black]">Mon article</td>
-                    <td class="border p-2.5 border-solid border-[black]">
-                        <button class="editerArticle bg-[green] text-[white] p-[5px] rounded-[5px] m-[5px]">Editer</button>
-                        <button class="supprimerArticle bg-[red] text-[white] p-[5px] rounded-[5px]">Supprimer</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="border p-2.5 border-solid border-[black]">Mon titre 1</td>
-                    <td class="border p-2.5 border-solid border-[black]">Mon article</td>
-                    <td class="border p-2.5 border-solid border-[black]">
-                        <button class="editerArticle bg-[green] text-[white] p-[5px] rounded-[5px] m-[5px]">Editer</button>
-                        <button class="supprimerArticle bg-[red] text-[white] p-[5px] rounded-[5px]">Supprimer</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="border p-2.5 border-solid border-[black]">Mon titre 1</td>
-                    <td class="border p-2.5 border-solid border-[black]">Mon article</td>
-                    <td class="border p-2.5 border-solid border-[black]">
-                        <button class="editerArticle bg-[green] text-[white] p-[5px] rounded-[5px] m-[5px]">Editer</button>
-                        <button class="supprimerArticle bg-[red] text-[white] p-[5px] rounded-[5px]">Supprimer</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="border p-2.5 border-solid border-[black]">Mon titre 1</td>
-                    <td class="border p-2.5 border-solid border-[black]">Mon article</td>
-                    <td class="border p-2.5 border-solid border-[black]">
-                        <button class="editerArticle bg-[green] text-[white] p-[5px] rounded-[5px] m-[5px]">Editer</button>
-                        <button class="supprimerArticle bg-[red] text-[white] p-[5px] rounded-[5px]">Supprimer</button>
-                    </td>
-                </tr>
             </table>
 
         </div>
@@ -154,7 +88,7 @@
 
 
 
-
+    <script src="./assets/js/parametreArticles.js"></script>
     <script src="./assets/js/indexScript.js"></script>
     
 </body>

@@ -8,9 +8,9 @@
             </div>
             <div class="utilisateurs">
                 <img class="w-[25px] block mx-auto my-0" src="./assets/images/users.png" alt="">
-                <p><a href="#">Utilisateurs</a></p>
+                <p><a href="./parametreUsers.php">Utilisateurs</a></p>
             </div>
             <div class="categories">
                 <img class="w-[25px] block mx-auto my-0" src="./assets/images/category.png" alt="">
-                <p><a href="#">Catégories</a></p>
+                <p><a href="./parametreCategories.php">Catégories</a></p>
             </div>
