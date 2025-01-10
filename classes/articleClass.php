@@ -64,5 +64,44 @@ class Article{
         return $result;
     }
 
+    //la fonction qui permet d ajouter un article
+
+    public function addArticle(){
+        $stmt = $this->connection->prepare("INSERT INTO articles (title, image, article, idUser) VALUES (:title, :image, :article, :idUser);");
+        $stmt->bindParam(":title", $this->title);
+        $stmt->bindParam(":image", $this->image);
+        $stmt->bindParam(":article", $this->article);
+        $stmt->bindParam(":idUser", $this->idUser);
+        $stmt->execute();
+        return $this->connection->lastInsertId();
+        // header("Location: ../index.php");
+
+    }
+
+    //fonction qui permet d'inserer des categories a un article
+    public function setCategories($category, $idArticle){
+        $stmt = $this->connection->prepare("SELECT * FROM tags WHERE name = :category;");
+        $stmt->bindParam(":category", $category);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $idCategory = $result["id"];
+
+        $stmt = $this->connection->prepare("INSERT INTO torepresent (idTag, idArticle) values(:idTag, :idArticle);");
+        $stmt->bindParam(":idTag", $idCategory);
+        $stmt->bindParam(":idArticle", $idArticle);
+        $stmt->execute();
+    }
+
+    //la fonction qui permet d afficher un article a partir de son id
+    public function displayArticle($id){
+        $stmt = $this->connection->prepare("SELECT * FROM articles WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    
+
 
 }

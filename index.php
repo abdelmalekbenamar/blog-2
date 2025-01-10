@@ -28,20 +28,20 @@ $allArticles = $articles->allArticles();
          foreach($allArticles as $article){ ?>
         <div class="articleCard w-[300px]">
             <div class="containerArticleImage w-[300px] h-[167px] overflow-hidden flex justify-center items-center">
-                <img class="articleImage w-[400px]" src="<?php echo $article["image"]; ?>" alt="">
+                <img class="articleImage w-[400px]" src="./assets/images/<?php echo $article["image"]; ?>" alt="">
             </div>
-            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href=""><?php echo $article["title"] ?></a></h2>
+            <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="./afficherArticle.php?id=<?php echo $article["id"]; ?>"><?php echo $article["title"] ?></a></h2>
             <p class="articleText text-sm"><?php echo $article["article"]; ?></p>
         </div>
         <?php }}else{ 
             $searchResult = $articles->searchForm($_GET["articleARecherhcer"]);
             foreach($searchResult as $result){
             ?>
-            <div class="articleCard w-[300px]">
+            <div id="<?php echo $result["id"]; ?>" class="articleCard w-[300px]">
                 <div class="containerArticleImage w-[300px] h-[167px] overflow-hidden flex justify-center items-center">
-                    <img class="articleImage w-[400px]" src="<?php echo $result["image"]; ?>" alt="">
+                    <img class="articleImage w-[400px]" src="./assets/images/<?php echo $result["image"]; ?>" alt="">
                 </div>
-                <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href=""><?php echo $result["title"] ?></a></h2>
+                <h2 class="articleTitle text-xl mx-0 my-[7px]"><a href="./afficherArticle.php?id=<?php echo $result["id"]; ?>"><?php echo $result["title"] ?></a></h2>
                 <p class="articleText text-sm"><?php echo $result["article"]; ?></p>
             </div>
 
