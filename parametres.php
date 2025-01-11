@@ -1,6 +1,27 @@
 <?php
 session_start();
 
+require_once("./classes/commentClass.php");
+require_once("./classes/articleClass.php");
+require_once("./classes/tagClass.php");
+require_once("./classes/classes.php");
+
+
+$article = new Article();
+$tag = new Tag();
+$users = new User();
+
+if($_SESSION["userRule"] == 2){
+    $nbrArticleUser = $article->nbrArticleUtilisateur($_SESSION["userId"]);
+
+}else if ($_SESSION["userRule"] == 1){
+    $nbrAllArticles = $article->nbrAllArticles();
+
+}
+
+$nbrTag = $tag->countTag();
+$nbrUsers = $users->nbrUsers();
+
 
 ?>
 <!DOCTYPE html>
@@ -22,20 +43,31 @@ session_start();
 
     
         <div class="partieDroite flex justify-around w-[calc(100vw_-_80px)] pt-[100px] flex-wrap">
-
+            <?php if($_SESSION["userRule"] == 1){ ?>
             <div class="userCard h-[150px] w-[300px] bg-[linear-gradient(45deg,burlywood,chocolate)] p-5 rounded-[10px]">
                 <h2>Users</h2>
                 <div class="userCardInfo mt-[20px] flex justify-around items-center">
                     <img class="cardImage w-[60px]" src="./assets/images/users.png" alt="">
-                    <span class="text-[28px]">5</span>
+                    <span class="text-[28px]"><?php echo $nbrUsers["nbrUsers"]; ?></span>
                 </div>
             </div>
+            <?php } ?>
 
             <div class="userCard h-[150px] w-[300px] bg-[linear-gradient(45deg,burlywood,chocolate)] p-5 rounded-[10px]">
                 <h2>Articles</h2>
                 <div class="userCardInfo mt-[20px] flex justify-around items-center">
                     <img class="cardImage w-[60px]" src="./assets/images/articles.png" alt="">
-                    <span class="text-[28px]">45</span>
+                    <span class="text-[28px]">
+                        <?php 
+                            if($_SESSION["userRule"] == 2){
+                                echo $nbrArticleUser["nbrArticle"];
+                            
+                            }else if ($_SESSION["userRule"] == 1){
+                                echo $nbrAllArticles["nbr"];
+                            
+                            }
+                        ?>
+                    </span>
                 </div>
             </div>
 
@@ -43,7 +75,7 @@ session_start();
                 <h2>Catégories</h2>
                 <div class="userCardInfo mt-[20px] flex justify-around items-center">
                     <img class="cardImage w-[60px]" src="./assets/images/category.png" alt="">
-                    <span class="text-[28px]">8</span>
+                    <span class="text-[28px]"><?php echo $nbrTag["nbrTag"]; ?></span>
                 </div>
             </div>
 

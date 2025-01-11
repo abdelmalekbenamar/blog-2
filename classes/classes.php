@@ -7,15 +7,8 @@ class User{
     private $pass;
     private $connection;
 
-    public function __construct($mail, $pass, $username = null){
+    public function __construct(){
 
-        $this->mail = $mail;
-        $this->pass = $pass;
-        
-        if($username !== null){
-            $this->username = $username;
-
-        }
 
         try{
             $this->connection = new PDO('mysql:host=localhost;dbname=blognum2;charset=utf8', 'root', 'azl,kkk!');
@@ -43,7 +36,7 @@ class User{
     public function getPass(){
         return $this->pass;
     }
-    public function setPass(){
+    public function setPass($pass){
         $this->pass = $pass;
     }
 
@@ -61,6 +54,14 @@ class User{
         $stmt = $this->connection->prepare("SELECT * FROM users WHERE mail = :mail AND pass = :pass;");
         $stmt->bindParam(':mail', $this->mail);
         $stmt->bindParam(':pass', $this->pass);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    //la fonction qui permet de retourner le nombre de utilisateurs inscrit dans le blog
+    public function nbrUsers(){
+        $stmt = $this->connection->prepare("SELECT COUNT(*) as nbrUsers FROM users WHERE idRule = 2;");
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;

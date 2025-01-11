@@ -25,4 +25,12 @@ class Tag{
         return $result;
     }
 
+    //fonction qui permet de compter tous les tags
+    public function countTag(){
+        $stmt = $this->connection->prepare("SELECT COUNT(*) nbrTag FROM tags;");
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
 }

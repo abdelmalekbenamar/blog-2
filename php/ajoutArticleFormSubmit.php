@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("../classes/commentClass.php");
 include_once("../classes/articleClass.php");
 
 
@@ -42,4 +43,6 @@ for($i = 2; $i < count($_POST); $i++){
     $article->setCategories($keys[$i], $lastInsertId);
 
 }
+
+header("Location: ../index.php");
 

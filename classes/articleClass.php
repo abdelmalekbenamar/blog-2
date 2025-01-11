@@ -104,6 +104,23 @@ class Article{
         return $result;
     }
 
+    //la fonction qui permet de compter le nombre d'article d un utilisateur
+    public function nbrArticleUtilisateur($idUser){
+        $stmt = $this->connection->prepare("SELECT COUNT(*) as nbrArticle FROM articles WHERE idUser = :idUser;");
+        $stmt->bindParam(":idUser", $idUser);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    //la fonction qui permet de compter tous les articles du blog
+    public function nbrAllArticles(){
+        $stmt = $this->connection->prepare("SELECT COUNT(*) AS nbr FROM articles;");
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     
 
 

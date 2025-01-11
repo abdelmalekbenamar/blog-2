@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once("./classes/commentClass.php");
 include_once("./classes/articleClass.php");
 
 $articles = new Article();
