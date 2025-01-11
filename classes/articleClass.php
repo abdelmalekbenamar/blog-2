@@ -7,6 +7,7 @@ class Article{
     private $article;
     private $idUser;
     private $connection;
+    public $comment;
 
     public function __construct(){
         try{
@@ -15,6 +16,8 @@ class Article{
         } catch (PDOException $e){
             echo "Connection failed: " . $e->getMessage();
         }
+
+        $this->comment = new Comment();
 
     }
 

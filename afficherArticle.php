@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+require_once("./classes/commentClass.php");
 require_once("./classes/articleClass.php");
 require_once("./classes/likeClass.php");
 
@@ -8,6 +10,10 @@ $result = $article->displayArticle($_GET["id"]);
 
 $likes = new Like();
 $nbrLike = $likes->numberLikes($_GET["id"]);
+
+$comments = $article->comment->displayCommentOfArticle($_GET["id"]);
+
+
 
 
 ?>
@@ -48,13 +54,13 @@ $nbrLike = $likes->numberLikes($_GET["id"]);
         
         <div class="comments mt-[20px]">
             <h2>Commentaires:</h2>
-            <div class="commentCard bg-[linear-gradient(-45deg,burlywood,rgb(255,178,123))] mx-0 my-[15px] p-2.5 rounded-[10px]">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam in animi, quos exercitationem laboriosam facere? Voluptates excepturi dicta modi et totam qui quos? Cupiditate reiciendis aperiam, explicabo aspernatur pariatur ipsam!
-            </div>
 
+            <?php foreach($comments as $comment){ ?>
             <div class="commentCard bg-[linear-gradient(-45deg,burlywood,rgb(255,178,123))] mx-0 my-[15px] p-2.5 rounded-[10px]">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam in animi, quos exercitationem laboriosam facere? Voluptates excepturi dicta modi et totam qui quos? Cupiditate reiciendis aperiam, explicabo aspernatur pariatur ipsam!
+                <?php echo $comment["comment"]; ?>
             </div>
+            <?php } ?>
+
         </div>
     </main>
     
